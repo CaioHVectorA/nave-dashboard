@@ -82,3 +82,8 @@ li {
 
 /* Outras formatações */
 /* Adicione aqui outras formatações de elementos HTML, como botões, caixas de alerta, etc. */
+
+  input::placeholder {
+     padding-left: 18px;
+     /* margin: 5px; */
+  }

@@ -15,6 +15,7 @@ const config: Config = {
         'action-blue': 'var(--action-blue)',
         'bg': 'var(--bg)',
         'sub-bg': 'var(--sub-bg)',
+        'main-text': 'var(--text)'
       },
     },
   },
