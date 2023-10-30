@@ -8,7 +8,7 @@ export function FormSelect({ label, role, setRole }: { label: "Professor" | "Dir
             <label className={`${glory.className} opacity-60 dark:opacity-80 text-xl text-main-text`} htmlFor={label}>{label}</label>
             <div className=' w-6 h-6 p-0 relative'>
                 <span className={'transition-all absolute left-0 top-0 w-full h-full z-20 border border-dark-blue rounded-full'+ ` ${role === label && 'bg-dark-blue'}`}></span>
-                <input onClick={() => setRole(label)} className="w-full h-full pl-12 absolute z-30 opacity-0 left-0 top-0" id={label} type='radio' name='role'/>
+                <input onClick={() => setRole(label)} className="w-full cursor-pointer h-full pl-12 absolute z-30 opacity-0 left-0 top-0" id={label} type='radio' name='role'/>
             </div>
         </div>
     )
