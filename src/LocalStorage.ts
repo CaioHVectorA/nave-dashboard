@@ -6,9 +6,8 @@ export function setLocalStorage(key: string, data: any) {
         localStorage.setItem(key, finalData)
 }
 export function getLocalStorage(key: string) {
-    const g = localStorage.getItem
-    if (!g(key)) return null
-    const d = g(key) as string
+    if (!localStorage.getItem(key)) return null
+    const d = localStorage.getItem(key) as string
     try {
         const r = JSON.parse(d)
         return r

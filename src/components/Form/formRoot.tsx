@@ -7,7 +7,8 @@ import { FormSelect } from './FormSelect'
 import { useForm, Controller, SubmitHandler, FieldValues } from 'react-hook-form'
 import { z } from 'zod'
 import axios from 'axios'
-import { URL } from '@/util/consts'
+import { LOCAL_STORAGE, URL } from '@/util/consts'
+import { setLocalStorage } from '@/LocalStorage'
 const glory = Glory({ subsets: ['latin'] })
 const inputClasses = 'bg-bg text-main-text mt-2 block w-full rounded-2xl py-2 px-2 text-black'
 const registerSchemaStep1 = z.object({
@@ -32,8 +33,10 @@ const registerSchemaStep1 = z.object({
   type loginSchemaData = z.infer<typeof loginSchema>
   function fetchData(formData: any, mode: 'LOGIN' | 'REGISTER') {
     axios.post(URL+'admin/'+ (mode === 'LOGIN' ? '/login' : ''),formData).then(response => {
-      console.log(response)
-      console.log(response.data)
+      setLocalStorage(LOCAL_STORAGE.USER_DATA,response.data)
+      console.log(response.data.role)
+      const url = response.data.role === 'Direção' ? '/direcao/home' : '/professor/home'
+      window.location.pathname = url
     }).catch((err) => {
       alert((err.response.data.message || 'Ocorreu um erro. Cheque os campos e tente novamente.'))
       console.log(err)

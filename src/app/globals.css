@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+* { transition: 0.8s; }
 :root {
   --dark-blue: #221B66;
   --sample-blue: #4032C5;
@@ -9,23 +9,24 @@
   --action-blue: #392CA7;
   --bg: #FFF;
   --sub-bg: #F2F2F2;
-  --text: #78787A;
+  --text: rgb(22, 22, 22);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --dark-blue: #3100a5;       /* Cor dark-blue no modo escuro */
-    --sample-blue: #00F;     /* Cor sample-blue no modo escuro */
-    --gray-blue: #89b6d4;      /* Cor gray-blue no modo escuro */
-    --action-blue: #399fda;       /* Cor action-blue no modo escuro */
-    --bg: #080808;           /* Cor bg no modo escuro */
-    --sub-bg: #202020;       /* Cor sub-bg no modo escuro */
+    --dark-blue: #3100a5;    
+    --sample-blue: #00F;     
+    --gray-blue: #89b6d4;    
+    --action-blue: #399fda;  
+    --bg: #080808;           
+    --sub-bg: #202020;       
     --text: #D9D9D9;
   }
 }
 
 body {
   background: var(--bg);
+  color: var(--text);
 }
 
 /* Estilos para tamanhos de cabeçalhos */
