@@ -16,7 +16,7 @@ function Horario({ Horario, Materia, Prof, Sala, index, id }: _Horario) {
           ref={ref}
           className=" bg-dark-blue flex justify-around rounded-2xl p-3 items-center text-white"
         >
-          <img src={getMateriaImg(Materia)} className=" w-20 object-cover h-20" />
+          <img src={getMateriaImg(Materia)} alt={Materia} className=" w-20 object-cover h-20" />
           <h3 className=" text-2xl">{Materia}</h3>
         </div>
         <div
@@ -93,7 +93,7 @@ type _Horario = {
             <div className=" w-full items-center gap-6 flex flex-col text-center">
               <h1 className=" text-3xl font-bold">Hoje não há aula!</h1>
               <h3>Aproveite o seu dia! {":)"}</h3>
-              <img src="/free_il.png" />
+              {/* <img src="/free_il.png" /> */}
             </div>
           )}
           {horariosData.length === 0 && <h1>Carregando...</h1>}

@@ -25,10 +25,10 @@ const data: SideBarProps[] = [
 export function SideBar() {
     return (
         <section className="sidebar bg-blue-800 w-16 flex flex-col justify-between items-center">
-            <img className="logo-sidebar mt-20 ml-6" src="/img_sidebar/Group 1.png" alt="" />
+            <img aria-label='Logo do App' className="logo-sidebar mt-20 ml-6" src="/img_sidebar/Group 1.png" alt="" />
                 <ul className="main flex flex-col justify-center items-center space-y-10 center">
                     {data.map(({ Icon,href,label }) => (
-                    <li>
+                    <li key={href}>
                         <Link href={href} className="home-icon" id="icons">
                                 <Icon size={40}/>
                                 <span className="text-white">{label}</span>
@@ -36,7 +36,7 @@ export function SideBar() {
                     </li>
                     ))}
                     <Link href="/" className="sair-icon">
-                        <img src="/img_sidebar/sair icon.png" alt=""  />
+                        <img src="/img_sidebar/sair icon.png" alt="Sair"  />
                     </Link>
                 </ul>
         </section>

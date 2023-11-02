@@ -9,7 +9,7 @@ export default function Home() {
     <main className=' w-screen flex items-center text-white justify-center h-screen bg-center bg-[url(/bg.png)] max-md:bg-[url(/bg2.png)]' style={{backgroundSize: '100%'}}>
       <section className="px-24 max-md:px-8 mx-8 rounded-md bg-zinc-800 dark:bg-opacity-60 dark:border dark:border-zinc-300 backdrop-blur-md py-8">
         <div className=' flex px-12 gap-2 items-center flex-1 justify-center'>
-          <img src='/logo_circle.png'/>
+          <img src='/logo_circle.png' alt='Logo do App'/>
           <h1 className={fira.className}>NAVE</h1>
         </div>
         <Form />  

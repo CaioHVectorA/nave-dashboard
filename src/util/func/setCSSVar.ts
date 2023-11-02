@@ -1,3 +1,5 @@
+import hasWindow from "./hasWindow";
+
 export function setCSSVar(key: string, value: string) {
-    document.documentElement.style.setProperty(key, value);
+  if (hasWindow()) document.documentElement.style.setProperty(key, value);
   }
