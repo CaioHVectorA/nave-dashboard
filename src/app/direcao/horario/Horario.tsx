@@ -8,13 +8,12 @@ import React, { useCallback, useReducer, useRef, useState } from 'react'
 function Horario({ Horario, Materia, Prof, Sala, index, id }: _Horario) {
     const [active, setActive] = useState(true);
     const ref = useRef(null);
-    console.log(id)
     return (
-      <div className="flex flex-col z-50 animate-in slide-in-from-left fade-in duration-1000">
+      <div className="flex flex-col z-50 w-64 animate-in slide-in-from-left fade-in duration-1000">
         <div
           onClick={() => setActive(!active)}
           ref={ref}
-          className=" bg-dark-blue flex justify-around rounded-2xl p-3 items-center text-white"
+          className=" bg-dark-blue flex justify-around rounded-2xl p-2 items-center text-white"
         >
           <img src={getMateriaImg(Materia)} alt={Materia} className=" w-20 object-cover h-20" />
           <h3 className=" text-2xl">{Materia}</h3>
@@ -29,12 +28,12 @@ function Horario({ Horario, Materia, Prof, Sala, index, id }: _Horario) {
         >
           <div className="flex flex-col w-full items-center">
             <div className=" flex gap-2 text-main-text">
-              <p>{`Professor (a): `}</p>
-              <span className=" text-secondary">{Prof ? Prof : "Nenhum"}</span>
+              <p className=' text-sm'>{`Professor (a): `}</p>
+              <span className=" text-secondary text-sm">{Prof ? Prof : "Nenhum"}</span>
             </div>
             <div className=" flex gap-2 text-main-text">
-              <p>{Horario}</p>
-              <span>| {Sala ? Sala : "Convivência"}</span>
+              <p className=' text-sm'>{Horario}</p>
+              <span className=' text-sm'>| {Sala ? Sala : "Convivência"}</span>
             </div>
           </div>
         </div>
@@ -104,7 +103,7 @@ type _Horario = {
   
   function HorariosContainer({ children }: Children) {
     return (
-      <div className="flex flex-col w-full px-6 rounded-2xl py-6 -z-20">
+      <div className="flex flex-col w-full px-2 rounded-2xl py-6 -z-20">
         {children}
       </div>
     );
@@ -149,9 +148,9 @@ export function Horarios({ data }: { data: Tempo[][][] }) {
           <AiFillCaretRight size={32} />
         </button>
         </div>
-        <div className=' flex flex-wrap w-full justify-between'>
+        <div className=' flex flex-wrap w-full'>
             {data.slice(indexes.start,indexes.end).map(horario => (
-              <div key={JSON.stringify(horario)} className=" w-3/12 mt-2">
+              <div key={JSON.stringify(horario)} className="mt-2">
                 <h1 className=" text-center text-3xl">{horario[0][0].turma}</h1>
                 <Rotina horariosData={horario} sampleDay={day} />
             </div>
