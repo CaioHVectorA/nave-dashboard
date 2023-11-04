@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { Horarios } from './Horario'
 import { Tempo } from '@/util/entities/tempo'
 
-export default function page({}: {}) {
+export default function Page({}: {}) {
     const [data, setData] = useState<null | Tempo[][][]>(null)
     useEffect(() => {
         const promises = [] as AxiosPromise[]
