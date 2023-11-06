@@ -153,10 +153,10 @@ function Register({
 type Mode = 'LOGIN' | 'REGISTER'
 export function FormRoot() {
     const search = useSearchParams()
-    
     const urlMode = search.get('mode')?.toUpperCase() === 'REGISTER' || search.get('mode')?.toUpperCase() === 'LOGIN' ? search.get('mode')?.toUpperCase() : null as Mode | null 
     //@ts-ignore
     const [mode, setMode] = useState<Mode>(urlMode ?? 'REGISTER')
+    console.log(urlMode, mode)
     const [role, setRole] = useState<Role>(null) // type Role = "Professor" | "Direção" | null
     const { control, handleSubmit, formState: { errors }, setError } = useForm<loginSchemaData>()
     const onSubmitForm: SubmitHandler<loginSchemaData> = (data) => {
@@ -184,7 +184,7 @@ export function FormRoot() {
     }
     return (
         <>
-        {search.get('mode')?.toUpperCase() === 'REGISTER' ? 
+        {mode === 'REGISTER' ? 
             <Register mode={mode} setMode={setMode} role={role} setRole={setRole} />
         : 
         <>
