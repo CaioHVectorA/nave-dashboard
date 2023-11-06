@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Fira_Sans, Glory, Inter } from 'next/font/google'
 import './globals.css'
+import { Providers } from '@/components/context/Session'
 
 const inter = Fira_Sans({ subsets: ['latin'], weight: '400'})
 
@@ -17,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   )
 }
