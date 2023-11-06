@@ -1,7 +1,7 @@
 import NextAuth, { NextAuthOptions } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 const handler = NextAuth({
-    secret: "",
+    secret: "TEST",
     theme: {
         logo: "https://live.staticflickr.com/65535/53313920630_99c22e058b_t.jpg",
         buttonText: "Entrar com sua conta google!",
