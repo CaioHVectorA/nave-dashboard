@@ -2,11 +2,11 @@
 import { getLocalStorage } from '@/LocalStorage'
 import { LOCAL_STORAGE } from '@/util/consts'
 import { changeTheme, setTheme } from '@/util/func/changeTheme'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 
 export function ChangeThemeSwitch({}: {}) {
     const [isDark, setDark] = useState(false)
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) setDark(true)
         if (getLocalStorage(LOCAL_STORAGE.USER_THEME) === 'DARK') return setDark(true)
         if (!window.matchMedia('(prefers-color-scheme: dark)').matches) setDark(false)

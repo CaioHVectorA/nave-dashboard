@@ -1,0 +1,97 @@
+
+
+.react-calendar {
+    border: none;
+    width: 400px;
+    background-color: #F2F2F2;
+    padding: 24px 16px;
+    border-radius: 30px;
+}
+.react-calendar__navigation, .react-calendar__month-view__weekdays {
+    display: none !important;
+}
+
+.react-calendar__tile {
+    color: var(--dark-blue) !important;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+    opacity: 0.1;
+}
+
+.react-calendar__navigation__label__labelText--from {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.react-calendar__tile--active:enabled:hover, .react-calendar__tile--active:enabled:focus {
+    background-color: transparent;
+    padding: 6px;
+    background-color: var(--dark);
+}
+
+.react-calendar__tile--active {
+    color: black;
+}
+
+button.react-calendar__navigation__label, button.react-calendar__month-view__days__day--neighboringMonth {
+    pointer-events: none;
+}
+.Kufam, .kufam {
+    /* font-family: 'Kufam'; */
+}
+button abbr {
+    /* font-family: 'Kufam'; */
+    font-size: 20px;
+}
+.react-calendar__tile {
+    /* border: 1px solid var(--dark) !important; */
+    border: none !important;
+    font-weight: bold;
+}
+.react-calendar__tile--now abbr {
+    background-color: var(--dark) !important;
+    /* padding: 6px; */
+    border-radius: 50%;
+    color: #d9d9d9;
+    aspect-ratio: 1/1;
+    /* display: block; */
+    margin: 0 auto;
+    /* width: 24px !important; */
+}
+.react-calendar__month-view__days__day--weekend {
+    color: var(--dark);
+}
+.calendar__borderTop {
+    border-top: 1px solid transparent !important;
+}
+
+.calendar__borderBot {
+    border-bottom: 1px solid transparent !important;
+}
+
+.calendar__borderLeft {
+    border-left: 1px solid transparent !important;
+}
+.calendar__borderRight {
+    border-right: 1px solid transparent !important;
+}
+
+/* fim de semana */
+.react-calendar__month-view__days__day--weekend {
+    /* color: rgba(253, 255, 132, 0.7); */
+}
+
+.react-calendar__navigation button:not(.react-calendar__navigation__label) {
+    display: none;
+}
+
+.grid-numbers {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-items: center;
+}
+
+.grid-numbers h3 {
+    text-align: center;
+}
