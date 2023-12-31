@@ -5,7 +5,7 @@ import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai'
 import getMateriaImg from '@/util/func/getMateriaImg';
 import { Children } from '@/util/types';
 import React, { useCallback, useReducer, useRef, useState } from 'react'
-function Horario({ Horario, Materia, Prof, Sala, index, id }: _Horario) {
+export function Horario({ Horario, Materia, Prof, Sala, index, id }: _Horario) {
     const [active, setActive] = useState(true);
     const ref = useRef(null);
     return (

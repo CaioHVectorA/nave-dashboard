@@ -12,26 +12,28 @@ function convertToJSON(file: File, token: string) {
         if (!event.target) return alert('Ocorreu um erro')
         //@ts-ignore
         const data = new Uint8Array(event.target.result);
-        console.log(data)
         const workbook = XLSX.read(data, { type: "array" });
-  
+        
         const jsonArrays: string[] = [];
-  
+        
         // Itera sobre cada planilha no arquivo
         workbook.SheetNames.forEach((sheetName) => {
           const worksheet = workbook.Sheets[sheetName];
           const jsonData = XLSX.utils.sheet_to_json(worksheet, { raw: false });
-  
+          
           // Adicionando a detecção de coluna
           const jsonWithColumnDetection = jsonData.map((row: any) => {
             const rowWithColumnDetection = {} as { value: string, columnIndex: number | bigint } | any;
+            let index = 0
             for (const column in row) {
               const columnIndex = XLSX.utils.decode_col(column);
               rowWithColumnDetection[column] = {
                 value: row[column],
                 columnIndex: columnIndex,
-                id: uuid()
+                id: uuid(),
+                columnIndex_two: index
               };
+              index++
             }
             return rowWithColumnDetection;
           }) as any;
