@@ -3,7 +3,7 @@ import React from 'react'
 import { SideBar } from '../../components/Sidebars/dir/SideBar'
 import { ChangeThemeSwitch } from '@/components/ChangeThemeSwitch/ChangeThemeSwitch'
 
-export default function page({ children }: Children) {
+export default function Page({ children }: Children) {
     return (
         <>
         <aside>

@@ -13,7 +13,7 @@ export function SelectTurma({...rest} : MyComponentProps) {
         <div>
             <label>Turma</label>
             <select {...rest}>
-                {turmaArr.map(i => <option value={i}>{i}</option>)}
+                {turmaArr.map(i => <option key={i} value={i}>{i}</option>)}
             </select>
         </div>
     )

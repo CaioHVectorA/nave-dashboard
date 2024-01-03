@@ -5,7 +5,7 @@ import React, { useEffect } from 'react'
 import { LOCAL_STORAGE } from '@/util/consts'
 import { useRouter } from 'next/navigation'
 import { findProfByEmail } from '@/util/func/findProfByEmail'
-export default function page({}: {}) {
+export default function Page({}: {}) {
     const nav = useRouter()
     useEffect(() => {
         const email = getLocalStorage(LOCAL_STORAGE.USER_DATA).email

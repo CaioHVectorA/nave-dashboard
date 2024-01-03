@@ -11,11 +11,11 @@ export function ProfView({ data, params }: { data: ProfTempo[], params: { prof: 
     return (
         <>
                 <select onChange={(e) => setDay(e.target.value as Day)} value={_day}>
-                {["SEGUNDA-FEIRA","TERÇA-FEIRA","QUARTA-FEIRA","QUINTA-FEIRA","SEXTA-FEIRA"].map(i => <option>{i}</option>)}
+                {["SEGUNDA-FEIRA","TERÇA-FEIRA","QUARTA-FEIRA","QUINTA-FEIRA","SEXTA-FEIRA"].map(i => <option key={i}>{i}</option>)}
                 </select>
                 <div className=" flex flex-col my-4">
                 {filteredData.map(({ day, horario, id, turma, value, sala }, index) => (
-                    <div className=" flex gap-4 items-center">
+                    <div key={id} className=" flex gap-4 items-center">
                         <h2>{turma}</h2>
                         <Horario Horario={horario} Materia={value} Prof={params.prof} Sala={sala} id={id} index={index}/>
                     </div>

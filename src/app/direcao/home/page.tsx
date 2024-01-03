@@ -5,7 +5,7 @@ import { SelectTurma } from '@/components/Selects/SelectTurma'
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 const actualTime = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`
 const Categories = ['Prova','Simulado','Tarefa','Trabalho']
-export default function page({}: {}) {
+export default function Page() {
     const [formActive, setActive] = useState(false)
     const [date, setDate] = useState<string>(actualTime)
     const [dateActive, setDateActive] = useState(false)
@@ -20,8 +20,8 @@ export default function page({}: {}) {
                 </div>
                     <input type='date' className={'bg-sub-bg w-fit h-fit px-2 py-4'+(dateActive ? '' : ' hidden')} value={date} onChange={({ target }) => setDate(target.value)}/>
                 <div className=' flex flex-col gap-2 w-8/12 pl-2'>
-                    {Categories.map(i => (
-                        <div className=' flex justify-self-start'>
+                    {Categories.map((i, index) => (
+                        <div key={index} className=' flex justify-self-start'>
                         <input type='radio'/>   
                         <label>{i}</label>
                         </div>
