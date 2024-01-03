@@ -15,3 +15,13 @@ export type SideBarProps = {
     label: string,
     href: string,
  } 
+
+
+export type ProfTempo = {
+    value: string,
+    horario: string,
+    day: string,
+    turma: string,
+    id: string,
+    sala: string
+}   
